@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="TBD"
+issueTrackerURL="https://github.com/OneLousyDev/CarpentryReforged/issues"
+[[mods]]
+modId="carpentryreforged"
+version="${file.jarVersion}"
+displayName="Carpentry: Reforged"
+credits="Thanks to Mineshopper for the original mod"
+authors="OneLousyGamer"
+description='''An unofficial port of the CarpentersBlocks mod to modern Minecraft!'''
+[[dependencies.carpentryreforged]]
+modId="forge"
+mandatory=true
+versionRange="[35,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.carpentryreforged]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.1,1.17)"
+ordering="NONE"
+side="BOTH"
