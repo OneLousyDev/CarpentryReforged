@@ -13,6 +13,18 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+repositories {
+    maven {
+        name "JEI"
+        url "https://dvs1.progwml6.com/files/maven"
+    }
+
+    maven {
+        name "TOP"
+        url "https://maven.tterrag.com/"
+    }
+}
+
 version = '1.16-1.0.0-ALPHA'
 group = 'com.lousydev.carpentryreforged'
 archivesBaseName = 'CarpentryReforged'
@@ -58,7 +70,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.10'
+    minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
+    compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
+    compileOnly fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:${top_version}:api")
+    runtimeOnly fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:${top_version}")
 }
 
 jar.finalizedBy('reobfJar')
